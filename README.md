@@ -33,4 +33,4 @@ If you require accounts with balance, there are some of them defined in the gene
 | `0xA953F261F8277C6c54951e1E2f04360dEA066fa1` | 100000000 ETH | `8acfcb9c3df4cdadf8837c515e925e5110cf9097474489ad253c358e69abe672` |
 | `0xa87B7E7E2274A611E3d63AB2d690b6a772036E48` | 100000000 ETH | `1a774dd0f467418e0ebfceb3187b9073642b9a2610be2116b636e244168b5514` |
 
-Since the min gas prince is set to 0, you can make smart contract transactions at 0 cost if you specify the gas price to 0 in the transaction parameters.
+Since the min gas price is set to 0, you can make smart contract transactions at 0 cost if you specify the gas price to 0 in the transaction parameters.
