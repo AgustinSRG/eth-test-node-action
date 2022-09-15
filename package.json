@@ -1,0 +1,40 @@
+{
+  "name": "@asanrom/eth-test-node-action",
+  "version": "1.0.0",
+  "description": "Ethereum Test Node. Github Action.",
+  "homepage": "https://github.com/AgustinSRG/eth-test-node-action",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AgustinSRG/eth-test-node-action"
+  },
+  "scripts": {
+    "build": "npm run lint",
+    "lint": "eslint --fix test/**/*.ts",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/**/*.ts'"
+  },
+  "author": {
+    "name": "Agustin San Roman",
+    "email": "agustinsanromanguzman@gmail.com",
+    "url": "https://github.com/AgustinSRG"
+  },
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "devDependencies": {
+    "@types/chai": "4.3.3",
+    "@types/mocha": "9.1.1",
+    "@types/node": "18.7.14",
+    "@typescript-eslint/eslint-plugin": "5.36.1",
+    "@typescript-eslint/parser": "5.36.1",
+    "chai": "4.3.6",
+    "eslint": "8.23.0",
+    "mocha": "10.0.0",
+    "ts-loader": "9.3.1",
+    "ts-node": "10.9.1",
+    "typescript": "4.8.2"
+  },
+  "license": "MIT"
+}
