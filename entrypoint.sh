@@ -12,7 +12,6 @@ echo "EXPOSE 8545" >> Dockerfile
 # Build image
 
 sh -c "docker build -t eth-test-node:latest ."
-sh -c "docker image ls"
 
 # Run the node
 
