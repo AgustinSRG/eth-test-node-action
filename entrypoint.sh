@@ -2,16 +2,16 @@
 
 # Generate dockerfile
 
-echo "FROM ethereum/client-go:$INPUT_GETHVERSIONt" > Dockerfile.geth
-echo "COPY /ethconfig/keystore /root/.ethereum/keystore" > Dockerfile.geth
-echo "COPY /ethconfig/genesis.json ." >> Dockerfile.geth
-echo "COPY /ethconfig/password.txt ." >> Dockerfile.geth
-echo "RUN geth init genesis.json" >> Dockerfile.geth
-echo "EXPOSE 8545" >> Dockerfile.geth
+echo "FROM ethereum/client-go:$INPUT_GETHVERSIONt" > Dockerfile
+echo "COPY /ethconfig/keystore /root/.ethereum/keystore" > Dockerfile
+echo "COPY /ethconfig/genesis.json ." >> Dockerfile
+echo "COPY /ethconfig/password.txt ." >> Dockerfile
+echo "RUN geth init genesis.json" >> Dockerfile
+echo "EXPOSE 8545" >> Dockerfile
 
 # Build image
 
-sh -c "docker build --tag eth-test-node:latest - < Dockerfile.geth"
+sh -c "docker build -t eth-test-node:latest ."
 sh -c "docker image ls"
 
 # Run the node
