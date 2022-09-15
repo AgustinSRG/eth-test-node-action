@@ -2,13 +2,13 @@
 
 # Initailize the network (genesis block)
 
-docker_eth_init="docker run -v /root/.ethereum:/root/.ethereum ethereum/client-go:$INPUT_GETH_VERSION geth init /root/.ethereum/genesis.json"
+docker_eth_init="docker run -v /root/.ethereum:/root/.ethereum ethereum/client-go:$INPUT_GETHVERSION geth init /root/.ethereum/genesis.json"
 
 sh -c "$docker_eth_init"
 
 # Run the node
 
-docker_run_node="docker run -d -p $INPUT_HOST_PORT:8545 -v /root/.ethereum:/root/.ethereum ethereum/client-go:$INPUT_GETH_VERSION geth"
+docker_run_node="docker run -d -p $INPUT_RPCPORT:8545 -v /root/.ethereum:/root/.ethereum ethereum/client-go:$INPUT_GETHVERSION geth"
 
 # Network config
 docker_run_node="$docker_run_node --networkid 2833"

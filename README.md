@@ -10,8 +10,8 @@ This action is limited only to Github Actions. If you want to create a test ethr
 steps:
 - uses: AgustinSRG/eth-test-node-action@v1.0
   with:
-    host port: 8545 # Optional, default value is 8545. The json-RPC port
-    geth version: latest # Ethereum docker image version to use, latest by default
+    rpcPort: 8545 # Optional, default value is 8545. The json-RPC port
+    gethVersion: latest # Ethereum docker image version to use, latest by default
 ```
 
 ## Connecting to the node
