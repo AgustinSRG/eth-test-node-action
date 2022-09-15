@@ -1,0 +1,29 @@
+name: test
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['14.x']
+
+    steps:
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Set up Ethereum test node
+      uses: AgustinSRG/eth-test-node-action@master
+      with:
+        rpcPort: 8545
+        gethVersion: latest
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run lint
+        npm test
+      env:
+        CI: true
