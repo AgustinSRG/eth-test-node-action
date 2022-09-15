@@ -3,7 +3,7 @@
 # Generate dockerfile
 
 echo "FROM ethereum/client-go:$INPUT_GETHVERSION" > Dockerfile
-echo "COPY /ethconfig/keystore /root/.ethereum/keystore" > Dockerfile
+echo "COPY /ethconfig/keystore /root/.ethereum/keystore" >> Dockerfile
 echo "COPY /ethconfig/genesis.json ." >> Dockerfile
 echo "COPY /ethconfig/password.txt ." >> Dockerfile
 echo "RUN geth init genesis.json" >> Dockerfile
