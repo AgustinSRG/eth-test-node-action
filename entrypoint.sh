@@ -1,14 +1,21 @@
 #!/bin/sh
 
-# Initailize the network (genesis block)
+# Generate dockerfile
 
-docker_eth_init="docker run -v /root/.ethereum:/root/.ethereum ethereum/client-go:$INPUT_GETHVERSION geth init /root/.ethereum/genesis.json"
+echo "FROM ethereum/client-go:$INPUT_GETHVERSIONt" > Dockerfile.geth
+echo "COPY /ethconfig/keystore /root/.ethereum/keystore" > Dockerfile.geth
+echo "COPY /ethconfig/genesis.json ." >> Dockerfile.geth
+echo "COPY /ethconfig/password.txt ." >> Dockerfile.geth
+echo "RUN geth init genesis.json" >> Dockerfile.geth
+echo "EXPOSE 8545" >> Dockerfile.geth
 
-sh -c "$docker_eth_init"
+# Build image
+
+docker build --tag eth-test-node - < Dockerfile.geth
 
 # Run the node
 
-docker_run_node="docker run -d -p $INPUT_RPCPORT:8545 -v /root/.ethereum:/root/.ethereum ethereum/client-go:$INPUT_GETHVERSION geth"
+docker_run_node="docker run --rm -d -p $INPUT_RPCPORT:8545 eth-test-node geth"
 
 # Network config
 docker_run_node="$docker_run_node --networkid 2833"
