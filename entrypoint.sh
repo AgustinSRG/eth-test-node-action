@@ -27,6 +27,6 @@ docker_run_node="$docker_run_node --http --http.addr 0.0.0.0 --http.corsdomain \
 docker_run_node="$docker_run_node --mine --miner.etherbase 0981d20d34a0fc96e73ffa783d0c560156142d90 --miner.gasprice 0"
 
 # Account unlock (for miner)
-docker_run_node="$docker_run_node --allow-insecure-unlock --unlock 0981d20d34a0fc96e73ffa783d0c560156142d90 --password /root/.ethereum/password.txt"
+docker_run_node="$docker_run_node --allow-insecure-unlock --unlock 0981d20d34a0fc96e73ffa783d0c560156142d90 --password password.txt"
 
 sh -c "$docker_run_node"
