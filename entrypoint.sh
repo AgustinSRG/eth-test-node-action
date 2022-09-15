@@ -11,7 +11,8 @@ echo "EXPOSE 8545" >> Dockerfile.geth
 
 # Build image
 
-docker build --tag eth-test-node:latest - < Dockerfile.geth
+sh -c "docker build --tag eth-test-node:latest - < Dockerfile.geth"
+sh -c "docker image ls"
 
 # Run the node
 
