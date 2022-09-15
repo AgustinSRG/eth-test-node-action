@@ -11,11 +11,11 @@ echo "EXPOSE 8545" >> Dockerfile.geth
 
 # Build image
 
-docker build --tag eth-test-node - < Dockerfile.geth
+docker build --tag eth-test-node:latest - < Dockerfile.geth
 
 # Run the node
 
-docker_run_node="docker run --rm -d -p $INPUT_RPCPORT:8545 eth-test-node geth"
+docker_run_node="docker run --rm -d -p $INPUT_RPCPORT:8545 eth-test-node:latest geth"
 
 # Network config
 docker_run_node="$docker_run_node --networkid 2833"
