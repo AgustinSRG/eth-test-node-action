@@ -15,7 +15,7 @@ sh -c "docker build -t eth-test-node:latest ."
 
 # Run the node
 
-docker_run_node="docker run --rm -d -p $INPUT_RPCPORT:8545 eth-test-node:latest geth"
+docker_run_node="docker run --rm -p $INPUT_RPCPORT:8545 eth-test-node:latest geth"
 
 # Network config
 docker_run_node="$docker_run_node --networkid 2833"
