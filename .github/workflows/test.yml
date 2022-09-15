@@ -20,7 +20,7 @@ jobs:
       uses: AgustinSRG/eth-test-node-action@master
       with:
         rpcPort: 8545
-        gethVersion: latest
+        gethVersion: alltools-latest
     - name: npm install, build, and test
       run: |
         npm install

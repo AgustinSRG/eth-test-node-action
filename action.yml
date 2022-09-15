@@ -12,7 +12,7 @@ inputs:
   gethVersion:
     description: 'Version of Ethereum client to use'
     required: false
-    default: 'latest'
+    default: 'alltools-latest'
 runs:
   using: 'docker'
   image: 'Dockerfile'
