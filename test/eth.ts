@@ -12,11 +12,6 @@ describe("Ethereum RPC Test", function () {
 
     this.timeout(20000);
 
-    before(async () => {
-        // Wait so the node can mine at least 1 block
-        await new Promise(resolve => setTimeout(resolve, 5000));
-    });
-
     /* Schema test */
 
     const web3 = new Web3("http://localhost:8545")
@@ -84,8 +79,6 @@ describe("Ethereum RPC Test", function () {
                 resolve(hash);
             });
         }));
-
-        console.log(txHash);
     });
 
     it('Should include the transaction into a block', async () => {
