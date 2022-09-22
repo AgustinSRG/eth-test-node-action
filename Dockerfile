@@ -5,8 +5,8 @@ RUN chmod +x /entrypoint.sh
 
 RUN mkdir -p /ethconfig
 
-COPY keystore .
-COPY genesis.json .
-COPY password.txt .
+COPY keystore /keystore
+COPY genesis.json /genesis.json
+COPY password.txt /password.txt
 
 ENTRYPOINT ["/entrypoint.sh"]
