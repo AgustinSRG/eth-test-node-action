@@ -8,7 +8,7 @@ This action is limited only to Github Actions. If you want to create a test ethr
 
 ```yml
 steps:
-- uses: AgustinSRG/eth-test-node-action@v1.0
+- uses: AgustinSRG/eth-test-node-action@v1.1
   with:
     rpcPort: 8545 # Optional, default value is 8545. The json-RPC port
     gethVersion: alltools-latest # Ethereum docker image version to use, alltools-latest by default
