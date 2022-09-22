@@ -1,9 +1,7 @@
-FROM docker:stable
+FROM ethereum/client-go:alltools-latest
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
-
-RUN mkdir -p /ethconfig
 
 COPY keystore /keystore
 COPY genesis.json /genesis.json

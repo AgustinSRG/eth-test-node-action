@@ -8,10 +8,9 @@ This action is limited only to Github Actions. If you want to create a test ethr
 
 ```yml
 steps:
-- uses: AgustinSRG/eth-test-node-action@v1.1
+- uses: AgustinSRG/eth-test-node-action@v2
   with:
     rpcPort: 8545 # Optional, default value is 8545. The json-RPC port
-    gethVersion: alltools-latest # Ethereum docker image version to use, alltools-latest by default
 ```
 
 ## Connecting to the node
@@ -21,6 +20,8 @@ In order to make use of the node, connect it using the HTTP interface (the node 
 ```js
 const web3 = new Web3("http://localhost:8545");
 ```
+
+The Chain ID for sending transactions is `2833`.
 
 ## Accounts with balance
 

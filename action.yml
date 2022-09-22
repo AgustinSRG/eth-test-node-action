@@ -9,10 +9,6 @@ inputs:
     description: 'The RPC port'
     required: false
     default: '8545'
-  gethVersion:
-    description: 'Version of Ethereum client to use'
-    required: false
-    default: 'alltools-latest'
 runs:
   using: 'docker'
   image: 'Dockerfile'
