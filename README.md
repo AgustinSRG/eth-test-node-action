@@ -11,6 +11,7 @@ steps:
 - uses: AgustinSRG/eth-test-node-action@v2
   with:
     rpcPort: 8545 # Optional, default value is 8545. The json-RPC port
+    gethVersion: alltools-latest # Ethereum docker image version to use, alltools-latest by default
 ```
 
 ## Connecting to the node
