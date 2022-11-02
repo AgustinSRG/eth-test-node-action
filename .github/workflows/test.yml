@@ -21,6 +21,8 @@ jobs:
       with:
         rpcPort: 8545
         gethVersion: alltools-latest
+        websocket: 'ON'
+        websocketPort: 8546
     - name: npm install, build, and test
       run: |
         npm install
