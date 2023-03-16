@@ -9,6 +9,7 @@ echo "RUN echo 'ew0KICAiY29uZmlnIjogew0KICAgICJjaGFpbklkIjogMjgzMywNCiAgICAiaG9t
 echo "RUN echo 'password' > /password.txt" >> Dockerfile
 echo "RUN geth init /genesis.json" >> Dockerfile
 echo "EXPOSE 8545" >> Dockerfile
+echo "EXPOSE 8546" >> Dockerfile
 
 # Build image
 
