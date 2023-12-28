@@ -71,12 +71,10 @@ describe("Ethereum RPC Test", function () {
         // Send tx
 
         txHash = await (new Promise<string>((resolve, reject) => {
-            web3.eth.sendSignedTransaction('0x' + serializedTx.toString('hex'), async (err, hash) => {
-                if (err) {
-                    return reject(err);
-                }
-    
-                resolve(hash);
+            web3.eth.sendSignedTransaction('0x' + Buffer.from(serializedTx).toString('hex')).then(receipt => {
+                resolve(web3.utils.toHex(receipt.transactionHash));
+            }).catch(err => {
+                reject(err);
             });
         }));
     });
