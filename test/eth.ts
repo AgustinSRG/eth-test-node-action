@@ -42,7 +42,7 @@ describe("Ethereum RPC Test", function () {
 
     const privateKey = "3de106f01f3fa595f215f50a0daf2ddd1bd061663b69396783a70dcee9f1f755";
     const privateKeyBuffer = Buffer.from(privateKey, "hex");
-    const account = web3.eth.accounts.privateKeyToAccount(privateKey);
+    const account = web3.eth.accounts.privateKeyToAccount("0x" + privateKey);
 
     let txHash: string;
 
