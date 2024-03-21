@@ -15,6 +15,9 @@ echo "RUN echo '${GENESIS_CONTENT}' | base64 -d > /etc/besu/config/genesis.json"
 echo "RUN echo '${NODE_PUB_KEY}' > /etc/besu/keys/key.pub" >> Dockerfile
 echo "RUN echo '${NODE_PRIV_KEY}' > /etc/besu/keys/key" >> Dockerfile
 
+echo "Dockerfile:"
+cat Dockerfile
+
 # Build image
 
 sh -c "docker build -t eth-test-node:latest ."
