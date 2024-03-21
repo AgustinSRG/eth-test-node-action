@@ -10,7 +10,7 @@
   "scripts": {
     "build": "npm run lint",
     "lint": "eslint --fix test/**/*.ts",
-    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'test/**/*.ts'"
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha --exit -b -r ts-node/register 'test/**/*.ts'"
   },
   "author": {
     "name": "Agustin San Roman",
