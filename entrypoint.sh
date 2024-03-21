@@ -1,8 +1,27 @@
 #!/bin/sh
 
+# Store config files in vars
+
+GENESIS_CONTENT=$(cat /networkFiles/config/genesis.json | base64)
+NODE_PUB_KEY='0x40fcf42050e5195c590f32329efc8510436ac9e6ea751f949ce64bc7420be1fc6edb881b614eb292b624200fb9af8b880746254122af4fee436ce04060a21cbc'
+NODE_PRIV_KEY='0x60ad021fcd4540cdf0f321085293d0e96d81c3e54bd5dbbdbe1cb07f5615a003'
+
+# Setup Dockerfile
+
+echo "FROM hyperledger/besu:latest" > Dockerfile
+echo "RUN mkdir -p /etc/besu/keys"
+echo "RUN mkdir -p /etc/besu/config"
+echo "RUN echo '${GENESIS_CONTENT}' | base64 -d > /etc/besu/config/genesis.json" >> Dockerfile
+echo "RUN echo '${NODE_PUB_KEY}' > /etc/besu/keys/key.pub" >> Dockerfile
+echo "RUN echo '${NODE_PRIV_KEY}' > /etc/besu/keys/key" >> Dockerfile
+
+# Build image
+
+sh -c "docker build -t eth-test-node:latest ."
+
 # Run the node
 
-docker_run_node="docker run --rm -d -p $INPUT_RPCPORT:8545 -p $INPUT_WEBSOCKETPORT:8546 -v /networkFiles/config:/etc/besu/config -v /networkFiles/keys/bootnode:/etc/besu/keys hyperledger/besu"
+docker_run_node="docker run --rm -p $INPUT_RPCPORT:8545 -p $INPUT_WEBSOCKETPORT:8546 eth-test-node:latest"
 
 # Node config
 
