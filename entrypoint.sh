@@ -2,7 +2,7 @@
 
 # Store config files in vars
 
-GENESIS_CONTENT=$(cat /networkFiles/config/genesis.json | base64)
+GENESIS_CONTENT=$(cat /networkFiles/config/genesis.json | base64 -w 0)
 NODE_PUB_KEY='0x40fcf42050e5195c590f32329efc8510436ac9e6ea751f949ce64bc7420be1fc6edb881b614eb292b624200fb9af8b880746254122af4fee436ce04060a21cbc'
 NODE_PRIV_KEY='0x60ad021fcd4540cdf0f321085293d0e96d81c3e54bd5dbbdbe1cb07f5615a003'
 
