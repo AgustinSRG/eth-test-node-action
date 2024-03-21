@@ -23,7 +23,7 @@ docker_run_node="docker run --rm -d -p $INPUT_RPCPORT:8545 -p $INPUT_WEBSOCKETPO
 docker_run_node="$docker_run_node --networkid 2833"
 
 # RPC config
-docker_run_node="$docker_run_node --http --http.addr 0.0.0.0 --http.corsdomain \"*\" --http.vhosts \"*\" --http.api \"eth,web3,net,admin,db,miner\""
+docker_run_node="$docker_run_node --http --http.port 8545 --http.addr 0.0.0.0 --http.corsdomain \"*\" --http.vhosts \"*\" --http.api \"eth,web3,net,admin,db,miner\""
 
 # RPC config
 if [ "$INPUT_WEBSOCKET" = "ON" ]
@@ -36,5 +36,7 @@ docker_run_node="$docker_run_node --mine --miner.etherbase 0981d20d34a0fc96e73ff
 
 # Account unlock (for miner)
 docker_run_node="$docker_run_node --allow-insecure-unlock --unlock 0981d20d34a0fc96e73ffa783d0c560156142d90 --password /password.txt"
+
+echo "Running Docker command: ${docker_run_node}"
 
 sh -c "$docker_run_node"
