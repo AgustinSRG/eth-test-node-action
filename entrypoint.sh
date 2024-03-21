@@ -9,6 +9,7 @@ NODE_PRIV_KEY='0x60ad021fcd4540cdf0f321085293d0e96d81c3e54bd5dbbdbe1cb07f5615a00
 # Setup Dockerfile
 
 echo "FROM hyperledger/besu:latest" > Dockerfile
+echo "USER root:root" >> Dockerfile
 echo "RUN mkdir -p /etc/besu/keys" >> Dockerfile
 echo "RUN mkdir -p /etc/besu/config" >> Dockerfile
 echo "RUN echo '${GENESIS_CONTENT}' | base64 -d > /etc/besu/config/genesis.json" >> Dockerfile

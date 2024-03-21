@@ -9,10 +9,6 @@ inputs:
     description: 'The RPC port'
     required: false
     default: '8545'
-  websocket:
-    description: 'Set to ON in order to enable WebSockets'
-    required: false
-    default: 'OFF'
   websocketPort:
     description: 'The WebSockets port'
     required: false

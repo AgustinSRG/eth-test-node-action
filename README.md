@@ -11,7 +11,6 @@ steps:
 - uses: AgustinSRG/eth-test-node-action@v4
   with:
     rpcPort: 8545 # Optional, default value is 8545. The json-RPC port
-    websocket: 'ON' # Set to 'ON' to enable WebSockets, set to 'OFF' to disable them
     websocketPort: 8546 # WebSockets port, by default 8546
 ```
 
