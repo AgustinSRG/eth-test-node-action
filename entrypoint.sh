@@ -25,7 +25,7 @@ sh -c "docker build -t eth-test-node:latest ."
 
 # Run the node
 
-docker_run_node="docker run --rm -p $INPUT_RPCPORT:8545 -p $INPUT_WEBSOCKETPORT:8546 eth-test-node:latest"
+docker_run_node="docker run --rm -d -p $INPUT_RPCPORT:8545 -p $INPUT_WEBSOCKETPORT:8546 eth-test-node:latest"
 
 # Node config
 
