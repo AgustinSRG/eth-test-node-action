@@ -8,7 +8,7 @@ This action is limited only to Github Actions. If you want to create a test Ethe
 
 ```yml
 steps:
-- uses: AgustinSRG/eth-test-node-action@v4
+- uses: AgustinSRG/eth-test-node-action@v5
   with:
     rpcPort: 8545 # Optional, default value is 8545. The json-RPC port
     websocketPort: 8546 # WebSockets port, by default 8546
