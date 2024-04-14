@@ -5,8 +5,7 @@
 import Web3 from 'web3';
 import { FeeMarketEIP1559TxData, FeeMarketEIP1559Transaction } from '@ethereumjs/tx';
 import { Common } from '@ethereumjs/common';
-
-import { expect } from 'chai';
+import assert from 'assert';
 
 describe("Ethereum RPC Test", function () {
 
@@ -20,12 +19,12 @@ describe("Ethereum RPC Test", function () {
 
     it('Should provide the lastest block properly', async () => {
         block = await web3.eth.getBlock("latest");
-        expect(block).not.to.be.null;
+        assert.notEqual(block, null);
     });
 
     it('Should provide a base fee per gas of 0 (free)', async () => {
         const gasPriceBigint = BigInt(block.baseFeePerGas);
-        expect(gasPriceBigint).to.be.equal(BigInt(0));
+        assert.equal(gasPriceBigint, BigInt(0));
     });
 
     const customCommon = Common.custom(
