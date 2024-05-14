@@ -2,13 +2,13 @@
 
 This [GitHub Action](https://github.com/features/actions) sets up a single-node and free-gas Ethereum RPC environment to automatically test smart contract projects.
 
-This action is limited only to Github Actions. If you want to create a test Ethereum node in your local computer, try this instead: [https://github.com/AgustinSRG/eth-test-node](https://github.com/AgustinSRG/eth-test-node)
+Note: This action is limited only to Github Actions. It may not work in other environments.
 
 ## Usage
 
 ```yml
 steps:
-- uses: AgustinSRG/eth-test-node-action@v5
+- uses: AgustinSRG/eth-test-node-action@v6
   with:
     rpcPort: 8545 # Optional, default value is 8545. The json-RPC port
     websocketPort: 8546 # WebSockets port, by default 8546
