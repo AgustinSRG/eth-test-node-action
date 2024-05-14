@@ -3,6 +3,7 @@
     "chainId" : 2833,
     "londonBlock" : 0,
     "contractSizeLimit": 2147483647,
+    "shanghaiTime": 0,
     "ibft2" : {
       "blockperiodseconds" : 2,
       "epochlength" : 30000,
